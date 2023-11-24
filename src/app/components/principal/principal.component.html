@@ -1,0 +1,63 @@
+<div>
+<mat-toolbar>
+<span class="example-spacer"></span>
+<button mat-raised-button color="accent" routerLink="/catalogo">Agregar</button>
+
+</mat-toolbar>
+
+</div>
+
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+ 
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef> APELLIDO </th>
+    <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="direccion">
+    <th mat-header-cell *matHeaderCellDef> DIRECCION DE ENTREGA </th>
+    <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+  </ng-container>
+  <ng-container matColumnDef="objeto">
+    <th mat-header-cell *matHeaderCellDef> OBJETO </th>
+    <td mat-cell *matCellDef="let element"> {{element.objeto}} </td>
+  </ng-container>
+  <ng-container matColumnDef="tipo">
+    <th mat-header-cell *matHeaderCellDef> TIPO </th>
+    <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+  </ng-container>
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> COLOR </th>
+    <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+  </ng-container>
+  <ng-container matColumnDef="monto">
+    <th mat-header-cell *matHeaderCellDef> MONTO A PAGAR </th>
+    <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]"
+               showFirstLastButtons
+               aria-label="Select page of periodic elements">
+</mat-paginator>
+
+
